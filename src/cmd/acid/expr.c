@@ -53,7 +53,7 @@ fmtsize(Value *v)
 	case 'I':
 		if(v->type != TINT || mach == 0)
 			error("no size for i fmt pointer ++/--");
-		ret = (*mach->instsize)(symmap, v->store.u.ival);
+		ret = (*mach->instsize)(cormap, v->store.u.ival);
 		if(ret < 0) {
 			ret = (*mach->instsize)(symmap, v->store.u.ival);
 			if(ret < 0)
